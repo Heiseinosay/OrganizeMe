@@ -1,0 +1,278 @@
+.page-signup {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white);
+
+    background-color: var(--white);
+}
+
+.container-1,
+.container-2 {
+    /* border: 1px solid; */
+}
+
+/* CONTAINER 2 */
+
+.container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.quote {
+    height: 75%;
+    width: 50%;
+    padding: 60px;
+
+    background-image: url('../images/createaccount.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+
+    border-radius: 40px 3px 40px 3px;
+}
+
+.quote h1 {
+    text-align: left;
+}
+
+.h1-last {
+    /* mar */
+}
+
+/* CONTAINER 1 */
+.container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-fill-up {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* border: 1px solid; */
+}
+
+#logo {
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.texts {
+    text-align: left;
+    color: var(--black);
+}
+
+.texts p {
+    margin-top: -10px;
+    font-size: 18px;
+}
+
+.texts .su-alert {
+    color: red;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.container-form {
+    width: 100%;
+}
+
+.container-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    /* border: 1px solid; */
+    margin-top: 30px;
+}
+
+.container-fname {
+    grid-area: 1 / 1 / 2 / 2;
+    /* border: 1px solid; */
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    align-items: start;
+}
+
+.container-lname {
+    grid-area: 1 / 2 / 2 / 3;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 95%;
+    margin-left: 5%;
+}
+
+.container-email {
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 10px;
+}
+
+.su-container-password {
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.container-fname label,
+.container-lname label {
+    text-align: left;
+    color: var(--black);
+    font-size: 14px;
+}
+
+.container-fname input,
+.container-lname input {
+    width: 88%;
+    height: 20px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: -15px;
+
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    outline: none;
+}
+
+.container-email label,
+.su-container-password label {
+    text-align: left;
+    color: var(--black);
+    font-size: 14px;
+}
+
+.container-email input {
+    width: 94%;
+    height: 20px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: -15px;
+
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    outline: none;
+}
+
+.su-container-password-input {
+    height: 40px;
+    width: 97.5%;
+    border-radius: 3px;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    margin-top: -15px;
+}
+
+.su-container-password-input input {
+    height: 35px;
+    width: 85%;
+    padding-left: 12px;
+    background-color: none;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.su-container-password-input img {
+    width: 25px;
+    cursor: pointer;
+    margin: 7px 0 0 10px;
+}
+
+.strength-indicator {
+    width: 195%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.su-circles {
+    display: flex;
+
+}
+
+.circles {
+    width: 10px;
+    height: 10px;
+    background-color: var(--lightGrey);
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.circle-grey {
+    background-color: grey;
+}
+
+.circle-red {
+    background-color: red;
+}
+
+.circle-orange {
+    background-color: orange;
+}
+
+.circle-green {
+    background-color: green;
+}
+
+.strength-indicator p {
+    color: var(--lightGrey);
+}
+
+.btn-sign-up {
+    width: 98%;
+    height: 40px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 3px;
+    margin-top: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-sign-up:hover {
+    background-color: #070707;
+    transition: all ease-in-out 0.2s;
+}
+
+.su-login-link {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--black);
+    /* border: 1px solid; */
+    width: 100%;
+}
+
+.su-login-link a {
+    color: var(--black);
+}

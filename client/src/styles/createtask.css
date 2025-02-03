@@ -1,0 +1,395 @@
+.comp-create-task {
+    overflow: hidden;
+}
+
+.comp-create-task {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-0%, 0%);
+
+    background-color: #0000008f;
+    display: block;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-create-task {
+    height: 500px;
+    width: 450px;
+    background-color: var(--darkGrey);
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 9999 !important;
+
+    display: flex;
+    flex-direction: column;
+    opacity: 100%;
+}
+
+/** HEADER 1  */
+.cct-header1 {
+    height: 30px;
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    flex-direction: row;
+    padding: 0;
+}
+
+.cct-header1>img {
+    width: 25px;
+    border-radius: 0px;
+    margin: 0px;
+}
+
+.cct-header1>select {
+    margin-left: 10px;
+    width: 130px;
+    font-size: 14px;
+    color: var(--grey4);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.cct-header1 select>option {
+    cursor: pointer;
+}
+
+/** HEADER 2  */
+.cct-header2 {
+    border-bottom: 2px solid var(--grey2);
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 8px;
+}
+
+.cct-header2-circle {
+    height: 20px;
+    width: 20px;
+    background-color: var(--purple);
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.cct-header2 input {
+    font-size: 20px;
+    background-color: none;
+    outline: none;
+    margin-left: 15px;
+    width: calc(100% - 5px);
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+}
+
+/** DESCRIPTION  */
+
+.cct-body-description {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cct-body-description-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.cct-body-description-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.cct-body-description-col2 {
+    border: 2px solid var(--grey2);
+    border-radius: 3px;
+    width: 60%;
+}
+
+.cct-body-description-col2>textarea {
+    padding: 10px;
+    color: var(--white);
+    height: 80px;
+    width: calc(100% - 20px);
+    background-color: transparent;
+    border: none;
+
+
+    resize: none;
+    outline: none;
+}
+
+.cct-body-description-col2>p {
+    color: var(--grey4);
+    font-size: 14px;
+    text-align: right;
+    margin: 0px 5px 5px 0;
+}
+
+/** DUE DATE  */
+.cct-body-duedate {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cct-body-duedate-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.cct-body-duedate-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.cct-body-duedate-col2 {
+    border-radius: 3px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.cct-body-duedate-col2 input {
+    background-color: transparent;
+    color: var(--white);
+    cursor: text;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 3px;
+    background-color: var(--grey1);
+    outline: none;
+}
+
+
+.cct-body-duedate-col2 input::-webkit-calendar-picker-indicator {
+    background-image: url('../images/calendar.png');
+    cursor: pointer;
+}
+
+/** REMINDER  */
+.cct-body-reminder {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cct-body-reminder-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.cct-body-reminder-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.cct-body-reminder-col2 {
+    border-radius: 3px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.cct-body-reminder-col2 button {
+    padding: 3px 10px;
+    border-radius: 2px;
+    background-color: var(--grey1);
+    border: none;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/** PRIORITY  */
+.cct-body-priority-level {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cct-body-priority-level-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.cct-body-priority-level-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.cct-body-priority-level-col2 {
+    border-radius: 3px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.cct-body-priority-level-col2 button {
+    padding: 3px 15px;
+    border-radius: 2px;
+    border: 1px transparent;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+.cct-body-priority-level-col2 button:nth-child(1) {
+    border: 1px solid var(--green);
+}
+
+.cct-body-priority-level-col2 button:nth-child(2) {
+    border: 1px solid var(--yellow1);
+}
+
+.cct-body-priority-level-col2 button:nth-child(3) {
+    border: 1px solid var(--red);
+}
+
+/** STATUS  */
+.cct-body-status {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cct-body-status-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.cct-body-status-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.cct-body-status-col2 {
+    border-radius: 3px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.cct-body-status-col2 button {
+    padding: 3px 10px;
+    border-radius: 2px;
+    background-color: var(--grey1);
+    border: none;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/** BUTTONS  */
+.create-subject-buttons {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.cb-btn-cancel {
+    padding: 8px 15px;
+    background-color: var(--darkGrey);
+    border: 1px solid var(--grey4);
+    border-radius: 3px;
+    color: var(--grey4);
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.cb-btn-cancel:hover {
+    background-color: var(--grey4);
+    border: 1px solid var(--darkGrey);
+    color: var(--darkGrey);
+}
+
+.cb-btn-create {
+    padding: 8px 15px;
+    background-color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 3px;
+    color: var(--darkGrey);
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    margin-left: 15px;
+}
+
+.cb-btn-create:hover {
+    background-color: #ad76e5;
+    border: 1px solid #ad76e5;
+}
+
+/** ACTIVE BUTTONS  */
+.btn-set-active {
+    background-color: var(--purple) !important;
+}
+
+.btn-active-green {
+    background-color: var(--green) !important;
+}
+
+.btn-active-yellow {
+    background-color: var(--yellow1) !important;
+}
+
+.btn-active-red {
+    background-color: var(--red) !important;
+}

@@ -1,0 +1,448 @@
+.page-subject {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-black);
+
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    overflow-x: hidden;
+    position: relative;
+
+    /* overflow-y: hidden; */
+}
+
+.subject-section1 {
+    padding: 10px;
+    /* margin-left: 20%; */
+    /* To ensure content starts after fixed navigation */
+}
+
+.subject-section2 {
+    height: fit-content;
+    /* border: 1px solid red; */
+}
+
+/** HEADER */
+.subject-name-container {
+    /* border: 1px solid red; */
+    display: flex;
+
+    padding: 30px 30px 0 30px;
+}
+
+.subject-name-container img {
+    height: 25px;
+    width: 25px;
+}
+
+.subject-name-container input {
+    height: 50px;
+    width: 300px;
+    padding-left: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    transition: all ease-in-out 0.2s;
+
+    font-size: 28px;
+    color: var(--white);
+}
+
+.subject-name-container input:focus {
+    border-bottom: 2px solid var(--white);
+}
+
+/** BODY */
+.page-subject-wrapper {
+    /* border: 1px solid; */
+    padding: 0 30px;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content; */
+
+    display: grid;
+    grid-template-columns: 65% 33%;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+/** SECTION 1 */
+.page-subject-wrapper-1 {
+    max-height: fit-content;
+    min-height: 100vh;
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+
+.page-subject-wrapper-1-header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.ps-btn-list,
+.ps-btn-calendar {
+    padding: 5px 15px;
+    background-color: transparent;
+    border-radius: 4px;
+    color: var(--grey4);
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    transition: all ease-in-out 0.2s;
+}
+
+.ps-btn-active {
+    border: 1px solid var(--grey4);
+}
+
+
+/** SECTION 2 */
+.page-subject-wrapper-2 {
+    height: calc(90vh - 0px);
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    /* border: 1px solid blue; */
+}
+
+.page-subject-wrapper-2-header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 20px;
+}
+
+.ps-btn-delete {
+    border: none;
+    color: var(--red);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px 0px;
+}
+
+/** TASK INFORMATION  */
+
+.ps-task-information {
+    border: 1px solid var(--grey2);
+    height: 93%;
+    width: calc(100% - 40px);
+    padding: 20px 20px;
+    background-color: var(--darkGrey);
+    border-radius: 5px;
+    min-width: 220px;
+}
+
+/** TASK HEADER */
+.ps-task-information-header {
+    border-bottom: 2px solid var(--grey2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.task-information-header-circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    background-color: var(--purple);
+    border-bottom: 2px solid;
+}
+
+.ps-task-information-header input {
+    height: 30px;
+    font-size: 22px;
+    margin-left: 10px;
+    width: 70%;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.ps-task-information-header img {
+    width: 25px;
+    cursor: pointer;
+}
+
+/** DESCRIPTION  */
+
+.ps-body-description {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 15px;
+
+    /* display: flex;
+    align-items: start;
+    justify-content: center; */
+}
+
+.ps-body-description-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.ps-body-description-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.ps-body-description-col2 {
+    border: 2px solid var(--grey2);
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ps-body-description-col2>textarea {
+    padding: 10px;
+    color: var(--white);
+    height: 80px;
+    width: calc(100% - 20px);
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.ps-body-description-col2>p {
+    color: var(--grey4);
+    font-size: 14px;
+    text-align: right;
+    margin: 0px 5px 5px 0;
+}
+
+/** DUE DATE  */
+.ps-body-duedate {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 20px;
+}
+
+.ps-body-duedate-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.ps-body-duedate-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.ps-body-duedate-col2 {
+    border-radius: 3px;
+    width: 92%;
+    display: flex;
+    align-items: center;
+}
+
+.ps-body-duedate-col2 input {
+    background-color: transparent;
+    color: var(--white);
+    cursor: text;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 3px;
+    background-color: var(--grey1);
+    outline: none;
+    margin: 10px 0px 0px 30px;
+}
+
+
+.cct-body-duedate-col2 input::-webkit-calendar-picker-indicator {
+    background-image: url('../images/calendar.png');
+    cursor: pointer;
+}
+
+/** REMINDER  */
+.ps-body-reminder {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 20px;
+
+
+}
+
+.ps-body-reminder-col1 {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.ps-body-reminder-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.ps-body-reminder-col2 {
+    border-radius: 3px;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 0px 30px;
+}
+
+.ps-body-reminder-col2 button {
+    padding: 3px 10px;
+    border-radius: 2px;
+    background-color: var(--grey1);
+    border: none;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/** PRIORITY  */
+.ps-body-priority-level {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 20px;
+
+}
+
+.ps-body-priority-level-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.ps-body-priority-level-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.ps-body-priority-level-col2 {
+    border-radius: 3px;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 0px 30px;
+}
+
+.ps-body-priority-level-col2 button {
+    padding: 3px 10px;
+    border-radius: 2px;
+    border: 1px transparent;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+.ps-body-priority-level-col2 button:nth-child(1) {
+    border: 1px solid var(--green);
+}
+
+.ps-body-priority-level-col2 button:nth-child(2) {
+    border: 1px solid var(--yellow1);
+}
+
+.ps-body-priority-level-col2 button:nth-child(3) {
+    border: 1px solid var(--red);
+}
+
+/** STATUS  */
+.ps-body-status {
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 20px;
+}
+
+.ps-body-status-col1 {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    cursor: default;
+}
+
+.ps-body-status-col1>img {
+    width: 20px;
+    border-radius: 0px;
+    margin: 0px 8px 0px 0px;
+}
+
+.ps-body-status-col2 {
+    border-radius: 3px;
+    width: 92%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    margin: 10px 0px 0px 30px;
+}
+
+.ps-body-status-col2 button {
+    padding: 3px 10px;
+    border-radius: 2px;
+    background-color: var(--grey1);
+    border: none;
+    color: var(--white);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/** BUTTONS  */
+.ps-body-button {
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ps-btn-save {
+    padding: 8px 30px;
+    background-color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 3px;
+    color: var(--darkGrey);
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    margin-left: 15px;
+}
+
+.ps-btn-save:hover {
+    background-color: #ad76e5;
+    border: 1px solid #ad76e5;
+}
+
+/** EMPTY */
+.ps-header-empty {
+    border-bottom: 2px solid var(--grey2);
+    height: 30px;
+    padding-bottom: 10px;
+}
+
+.ps-header-body {
+    height: calc(100% - 40px);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--grey4);
+    font-size: 18px;
+}

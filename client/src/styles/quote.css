@@ -1,0 +1,29 @@
+.comp-quote {
+    height: 200px;
+    width: 20%;
+    background-color: var(--yellow1);
+    border-radius: 3px;
+    color: var(--white);
+}
+
+.comp-quote h5 {
+    font-size: 14px;
+    text-align: left;
+    padding: 10px 0 0 10px;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    padding: 0 25px;
+}
+
+.quote-container h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    font-size: 1.5vw;
+}
