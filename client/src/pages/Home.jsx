@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { Helmet } from 'react-helmet'
 
 // CALENDAR
 import { ScheduleXCalendar, useCalendarApp } from '@schedule-x/react'
@@ -177,6 +178,9 @@ function Home() {
 
     return (
         <div className='page-home'>
+            <Helmet>
+                <title>OrganizeMe | Dashboard </title>
+            </Helmet>
             {isPopupVisible && (
                 <CreateSubject onCancel={closePopup} userdata={user} reloadSubjects={reload_subjects} />
             )}

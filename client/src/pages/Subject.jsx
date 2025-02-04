@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import dayjs from 'dayjs'
+import { Helmet } from 'react-helmet'
 
 // COMPONENTS
 import Navigation from '../components/Navigation'
@@ -271,6 +272,9 @@ function Subject() {
 
     return (
         <div className='page-subject'>
+            <Helmet>
+                <title>OrganizeMe | {paramsSubjectName} </title>
+            </Helmet>
             {isCreateTaskVisible && (
                 <CreateTask onClose={handleCloseCreateTask} uid={user[0]} openedSubject={paramsSubjectName} subjectID={paramsSubjectID} onTaskCreated={fetchTasks} />
             )}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Helmet } from 'react-helmet'
 
 // COMPONENTS
 import Navigation from '../components/Navigation'
@@ -111,6 +112,9 @@ function Notifications() {
     }
     return (
         <div className='page-notifications'>
+            <Helmet>
+                <title>OrganizeMe | Notifications </title>
+            </Helmet>
             {isCreateTaskVisible && (
                 <CreateTask onClose={handleCloseCreateTask} uid={user[0]} openedSubject={null} />
             )}

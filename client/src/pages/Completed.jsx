@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { Helmet } from 'react-helmet'
 
 // COMPONENTS
 import Navigation from '../components/Navigation'
@@ -81,6 +82,9 @@ function Completed() {
     }
     return (
         <div className='page-completed'>
+            <Helmet>
+                <title>OrganizeMe | Completed</title>
+            </Helmet>
             {isCreateTaskVisible && (
                 <CreateTask onClose={handleCloseCreateTask} uid={user[0]} openedSubject={null} />
             )}

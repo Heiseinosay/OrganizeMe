@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import dayjs from 'dayjs'
+import { Helmet } from 'react-helmet'
 
 // COMPONENTS
 import Navigation from '../components/Navigation'
@@ -200,6 +201,9 @@ function SearchArea() {
 
     return (
         <div className='page-searcharea'>
+            <Helmet>
+                <title>OrganizeMe | {searchTerm}</title>
+            </Helmet>
             {isCreateTaskVisible && (
                 <CreateTask onClose={handleCloseCreateTask} uid={user[0]} openedSubject={null} />
             )}
