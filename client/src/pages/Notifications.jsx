@@ -154,7 +154,7 @@ function Notifications() {
 
                                             <div className="notification-item-text">
                                                 <p className='inter-regular'>
-                                                    Reminder: Don't forget to complete your task, ‘{notification[3]}’, due on {notification[5].slice(0, 16)}. Stay on track with OrganizeMe!
+                                                    Overdue Alert: Your task, ‘{notification[3]}’, due on {notification[5].slice(0, 16)} and is still unfinished. Take action now!
                                                 </p>
                                             </div>
                                         </div>
@@ -168,7 +168,7 @@ function Notifications() {
 
                                             <div className="notification-item-text">
                                                 <p className='inter-regular'>
-                                                    Reminder: Don't forget to complete your task, ‘{notification[3]}’, due on {notification[5].slice(0, 16)}. Stay on track with OrganizeMe!
+                                                    Follow-up: Your task, ‘{notification[3]}’, due on {notification[5].slice(0, 16)} but hasn't started yet. Let's get things moving!
                                                 </p>
                                             </div>
                                         </div>

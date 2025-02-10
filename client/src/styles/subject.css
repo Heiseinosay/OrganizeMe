@@ -127,6 +127,7 @@
 
 .ps-task-information {
     border: 1px solid var(--grey2);
+    min-height: fit-content;
     height: 93%;
     width: calc(100% - 40px);
     padding: 20px 20px;
