@@ -11,10 +11,15 @@ def connect_to_db():
 
         # First method
         mysqldb = connection.MySQLConnection(
-            user='root', 
-            password='HelloWorld#,12345',                   
-            host='localhost',
-            database='organizeme' # Use Existing Database
+            # user='root', 
+            # password='HelloWorld#,12345',                   
+            # host='localhost',
+            # database='organizeme' # Use Existing Database
+            user='root',
+            password='vRbegrxYKNkDNwQvoByWSEylhwWGSJHU',
+            host='viaduct.proxy.rlwy.net',
+            database='railway',
+            port=41816  
         )
 
         print("Connection successful!")
@@ -31,6 +36,13 @@ def connect_to_db():
 def create_account(first_name, last_name, email, password):
     mysqldb, cursor = connect_to_db()
     try:
+
+        read_query = 'SELECT * FROM users WHERE Email = %s'
+        cursor.execute(read_query, (email, ))
+        result = cursor.fetchall()
+        if (len(result) >= 1):
+            return False
+        
         insert_query = ('INSERT INTO users(FirstName, LastName, Email, Password) VALUES(%s, %s, %s, %s)') 
         record = (first_name, last_name, email, password)
         cursor.execute(insert_query, record)
@@ -285,14 +297,16 @@ def task_accomplished(tid, uid, sid):
         insert_query = """
             INSERT INTO completed (UserID, SubjectID, TaskID, SubjectName, TaskTitle, Description, Created, DueDate, CompletionDate)
             SELECT t.UserID, t.SubjectID, t.TaskID, c.SubjectName, t.taskTitle, t.Description, t.DateCreated, t.DueDate, curdate()
-            FROM Task as t
+            FROM task as t
             INNER JOIN courses AS c
             ON t.subjectID = c.subjectID
             WHERE t.subjectID = %s AND t.taskID = %s AND t.UserID = %s;
             """
-
+        print("im here")
         record = (sid, tid, uid)
         cursor.execute(insert_query, record)
+
+        print(cursor)
 
         # DELETE FROM TASK
         delete_query = "DELETE FROM task WHERE TaskID=%s AND UserID=%s AND SubjectID = %s"
@@ -522,3 +536,5 @@ def search_item(uid, searchTerm):
             print(f"Error in inserting: {e}")
     finally:
         mysqldb.close()
+
+
