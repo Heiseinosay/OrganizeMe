@@ -21,6 +21,7 @@ function Signup() {
     const [suEmail, setSuEmail] = useState("");
     const [suPassword, setSuPassword] = useState("");
     const [suErrorMessage, setSuErrorMessage] = useState("")
+    const [loading, setLoading] = useState(false);
 
     const handlesuFirstName = (e) => setSuFirstName(e.target.value);
     const handlesuLastName = (e) => setSuLastName(e.target.value);
@@ -54,11 +55,13 @@ function Signup() {
     };
 
     const suSubmit = () => {
+        if (loading) return;
         console.log(suFirstName, suLastName, suEmail, suPassword)
         if (!suFirstName || !suLastName || !suEmail || !suPassword) {
             setSuErrorMessage("Please fill up the missing fields");
         } else {
             setSuErrorMessage("");
+            setLoading(true);
             axios.post('/signup', {
                 firstName: suFirstName,
                 lastName: suLastName,
@@ -72,15 +75,16 @@ function Signup() {
                     if (status === 'success') {
                         navigate('/login');
                     } else {
-                        alert("Signup failed. Please try again.");
+                        alert("Email already exist. Please login");
                     }
                 })
                 .catch((error) => {
                     console.error("Signup failed:", error);
+                })
+                .finally(() => {
+                    setLoading(false); // Reset loading state after request completes
                 });
         }
-
-
     }
 
     return (

@@ -1,5 +1,7 @@
 :root {
-    --point-color: #555;
+    --point-color: #e7e7e7;
+    --size: 10px;
+    /* Define --size */
 }
 
 .loader {

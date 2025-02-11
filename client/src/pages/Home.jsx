@@ -26,6 +26,7 @@ import Loading from '../components/Loading';
 import '../styles/home.css'
 import '../styles/fonts.css'
 import '../styles/root_variables.css'
+import '../styles/load.css'
 
 // IMAGES
 import AddFolder from '../images/add-folder.png'
@@ -170,7 +171,7 @@ function Home() {
 
     if (user == null || allTask == null) {
         return (
-            <div className='comp-summary'>
+            <div className='comp-loading'>
                 <Loading />
             </div>
         )

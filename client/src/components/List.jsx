@@ -85,7 +85,7 @@ function List({ userData, sid, onTaskSelect, onAddTaskClick, tasks }) {
             })
 
 
-        }, 1000);
+        }, 500);
         setHoldTimeout(timeout);
     };
 
@@ -121,6 +121,9 @@ function List({ userData, sid, onTaskSelect, onAddTaskClick, tasks }) {
                             ).padStart(2, '0')}-${dueDate.getFullYear()}`
                             : "Invalid Date";
 
+
+
+
                         // Determine the priority class based on task[7]
                         let priorityClass = "";
                         switch (task[7]) {
@@ -153,8 +156,8 @@ function List({ userData, sid, onTaskSelect, onAddTaskClick, tasks }) {
                                 </div>
 
                                 <div className="user-task-value-sec2">
-                                    <p className="inter-regular">{task[9]}</p>
-                                    <p className="inter-regular">Due on {formattedDate}</p>
+                                    <p className="inter-regular">Remind on {task[9].slice(0, 16)}</p>
+                                    <p className="inter-regular">Due on {task[5].slice(0, 16)}</p>
                                 </div>
                             </div>
                         );

@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 // COMPONENTS
 import Navigation from '../components/Navigation'
 import CreateTask from '../components/CreateTask';
+import Loading from '../components/Loading';
 
 // STYLES
 import '../styles/fonts.css'
@@ -77,8 +78,12 @@ function Completed() {
     };
 
 
-    if (user == null) {
-        return <div>Loading...</div>
+    if (user == null || completedTask == null) {
+        return (
+            <div className='comp-loading'>
+                <Loading />
+            </div>
+        )
     }
     return (
         <div className='page-completed'>

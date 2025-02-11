@@ -10,9 +10,15 @@ import '../styles/root_variables.css'
 function CreateSubject({ onCancel, userdata, reloadSubjects }) {
     const [subjectName, setSubjectName] = useState("")
     const handleSubjectChange = (e) => setSubjectName(e.target.value);
+    const [loading, setLoading] = useState(false);
 
     const saveSubject = () => {
         if (subjectName.length != 0) {
+            if (loading) {
+                console.log("loading...")
+                return;
+            }
+            setLoading(true);
             axios.post('/add_subject', {
                 uid: userdata[0],
                 subjectName: subjectName
@@ -29,6 +35,9 @@ function CreateSubject({ onCancel, userdata, reloadSubjects }) {
                 })
                 .catch((error) => {
                     console.error("Error fetching subjects:", error);
+                })
+                .finally(() => {
+                    setLoading(false); // Reset loading state after request completes
                 });
         }
     }

@@ -19,6 +19,7 @@ function CreateTask({ onClose, uid, openedSubject, subjectID, onTaskCreated }) {
     let location = useLocation();
 
     const [subjects, setSubjects] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         axios
@@ -104,6 +105,8 @@ function CreateTask({ onClose, uid, openedSubject, subjectID, onTaskCreated }) {
             "\nStatus: ", activeStatus,
         )
         if (validateForm()) {
+            if (loading) return;
+            setLoading(true);
             axios.post('/create_task', {
                 userID: uid,
                 subjectID: selectedSubject,
@@ -127,6 +130,9 @@ function CreateTask({ onClose, uid, openedSubject, subjectID, onTaskCreated }) {
             }).catch((err) => {
                 console.log(err)
             })
+                .finally(() => {
+                    setLoading(false);
+                });
         }
 
     }

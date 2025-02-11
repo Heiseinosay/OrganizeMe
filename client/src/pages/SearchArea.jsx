@@ -9,6 +9,7 @@ import Navigation from '../components/Navigation'
 import CalendarView from '../components/CalendarView'
 import List from '../components/List'
 import CreateTask from '../components/CreateTask'
+import Loading from '../components/Loading'
 
 // STYLES
 import '../styles/searcharea.css'
@@ -35,7 +36,7 @@ function SearchArea() {
     // console.log(searchTerm)
 
     //* FETCH TASKS
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(null);
     const fetchTasks = () => {
 
         axios
@@ -191,10 +192,10 @@ function SearchArea() {
     };
 
 
-    if (user == null) {
+    if (user == null || tasks == null) {
         return (
-            <div className='comp-summary'>
-                Loading...
+            <div className='comp-loading'>
+                <Loading />
             </div>
         )
     }

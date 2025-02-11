@@ -9,6 +9,7 @@ import Navigation from '../components/Navigation'
 import CalendarView from '../components/CalendarView'
 import List from '../components/List'
 import CreateTask from '../components/CreateTask'
+import Loading from '../components/Loading'
 
 // STYLES
 import '../styles/subject.css'
@@ -33,13 +34,13 @@ function Subject() {
     const queryParams = new URLSearchParams(location.search);
     const initialSubjectName = queryParams.get('SubjectName');
     const paramsSubjectID = queryParams.get('SubjectID');
-
+    const [loading, setLoading] = useState(false);
 
     const [paramsSubjectName, setSubjectName] = useState('')
     const [previousSubjectName, setPreviousSubjectName] = useState('');
 
     //* FETCH TASKS
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(null);
 
     const fetchTasks = () => {
 
@@ -197,6 +198,8 @@ function Subject() {
 
     //* UPDATE TASK
     const clickedUpdateTask = () => {
+        if (loading) return;
+        setLoading(true);
         axios.post('update_task', {
             taskID: selectedTask[0],
             userID: selectedTask[1],
@@ -219,11 +222,15 @@ function Subject() {
 
         }).catch((err) => {
             console.error("Cannot update: " + err)
-        })
+        }).finally(() => {
+            setLoading(false); // Reset loading state after request completes
+        });
     }
 
     //* DELETE TASK 
     const deleteTask = (taskid, uid, sid) => {
+        if (loading) return;
+        setLoading(true);
         // alert("Deleting...")
         console.log(taskid, uid, sid)
         axios.delete('/delete_subject_task', {
@@ -244,7 +251,9 @@ function Subject() {
             }
         }).catch(err => {
             console.log("Delete error:", err)
-        })
+        }).finally(() => {
+            setLoading(false); // Reset loading state after request completes
+        });
     }
 
     //* CREATE TASK
@@ -262,10 +271,10 @@ function Subject() {
     //!!! TO CALENDAR
 
 
-    if (user == null) {
+    if (user == null || tasks == null) {
         return (
-            <div className='comp-summary'>
-                Loading...
+            <div className='comp-loading'>
+                <Loading />
             </div>
         )
     }

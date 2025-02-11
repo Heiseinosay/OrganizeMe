@@ -16,11 +16,17 @@ function Login() {
 
     const navigate = useNavigate()
     const [lgErrorMessage, setLgErrorMessage] = useState("")
+    const [loading, setLoading] = useState(false);
 
     const handleLogin = () => {
+        if (loading) {
+            console.log("loading...")
+            return;
+        }
         const emailInput = document.getElementById('email').value;
         const passwordInput = document.getElementById('pwd').value;
 
+        setLoading(true);
         // console.log(emailInput, passwordInput)
         axios.post('/auth_login', {
             email: emailInput,
@@ -43,6 +49,9 @@ function Login() {
             .catch(error => {
                 console.error("Login error:", error);
                 alert("An error occurred during login.");
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }
 
